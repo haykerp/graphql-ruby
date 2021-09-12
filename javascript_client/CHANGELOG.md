@@ -1,0 +1,182 @@
+# graphql-ruby-client
+
+# 1.10.0 (25 Aug 2021)
+
+- Remove direct dependency on `request` #3594
+- Update `createRelaySubscriptionHandler` to support Relay 11. Use `createLegacyRelaySubscriptionHandler` to get the old behavior. #3594
+
+# 1.9.3 (31 Mar 2021)
+
+- Move `graphql` and `@apollo/client` to `peerDeps` for more flexible versions #3395
+
+# 1.9.2 (19 Feb 2021)
+
+- Remove dependency on React by changing imports to `@apollo/client/core` #3349
+
+# 1.9.1 (11 Feb 2021)
+
+- Support graphql 15.x in dependencies #3334
+
+## 1.9.0 (10 Feb 2021)
+
+- Move "compiled" `.js` files into the root directory of the published NPM package (instead of `dist/`). To upgrade, remove `dist/` from your import paths. (These files will be treated as public APIs in their own right, exposed independently to support smaller bundle sizes.) #2768
+- Upgrade dependency from `apollo-link` to `@apollo/client` #3270
+
+## 1.8.2 (2 Feb 2021)
+
+- Pusher: Accept a `decompress:` function for handling compressed payloads #3311
+
+## 1.8.1 (16 Nov 2020)
+
+- Sync: When `--url` is omitted, generate an outfile without syncing with a server
+
+## 1.8.0 (10 Nov 2020)
+
+- Ably: Support server-side `cipher_base:` config in the client
+
+## 1.7.12 (3 Nov 2020)
+
+- Ably: Add `rewind:` config so messages aren't lost between subscribe and registration of listener. #3210
+- Ably: Fix race condition where error was raised before the channel was available. #3210
+
+## 1.7.11 (15 June 2020)
+
+- Ably: Improve channel state handling in case the initial subscription result contains errors #2993
+
+## 1.7.10 (13 June 2020)
+
+- Ably: Improve error handling and channel cleanup #2991
+
+## 1.7.9 (15 May 2020)
+
+- Ably: _completely_ unsubscribe when subscriptions are done #2944
+- Ably: propagate errors from subscriptions #2944
+
+## 1.7.8 (1 May 2020)
+
+- `sync`: Add support for Apollo-Android's `OperationOutput.json` #2914
+
+## 1.7.7 (15 Apr 2020)
+
+- Ably handler: dispatch initial response #2866
+- Ably handler: catch any error in initial HTTP call #2877
+
+## 1.7.6 (3 Apr 2020)
+
+- Fix ActionCableLink sending unsubcribe to ActionCable #2842
+
+## 1.7.5 (4 Mar 2020)
+
+- Add missing dependency declarations
+
+## 1.7.4 (18 Feb 2020)
+
+- Move all exports to top level
+- Fix sync body handling: wait for all chunks, improve verbose output
+
+## 1.7.3 (17 Feb 2020)
+
+- Fix CLI for TypeScript
+
+## 1.7.2 (17 Feb 2020)
+
+- Convert outfile generators to TypeScript and include them in published package
+
+## 1.7.1 (17 Feb 2020)
+
+- Fix `bin` configuration in package.json
+
+## 1.7.0 (17 Feb 2020)
+
+- Rewrite in TypeScript
+
+## 1.6.8 (18 Sept 2019)
+
+- Properly send `Content-Type: application/json` when posting persisted operations
+
+## 1.6.7 (18 Sept 2019)
+
+- Add post data to `--verbose` output of `sync`
+
+## 1.6.6 (6 Aug 2019)
+
+- Add `--relay-persisted-output` for working with Relay Compiler's new `--persist-output` option #2415
+
+## 1.6.5 (17 July 2019)
+
+- Update dependencies #2335
+
+## 1.6.4 (11 May 2019)
+
+- Add `--verbose` option to `sync` #2075
+- Support Relay 2.0.0 #2121
+- ActionCableLink: support subscriber when there are errors but no data #2176
+
+## 1.6.3 (11 Jan 2019)
+
+- Fix `.unsubscribe()` for PusherLink #2042
+
+## 1.6.2 (14 Dec 2018)
+
+- Support identified Ably client #2003
+
+## 1.6.1 (30 Nov 2018)
+
+- Support `ably:` option for Relay subscriptions
+
+## 1.6.0 (19 Nov 2018)
+
+- Fix unused requires #1943
+- Add `generateClient` function to generate code _without_ the HTTP call #1941
+
+## 1.5.0 (27 October 2018)
+
+- Fix `export` usage in PusherLink, use `require` and `module.exports` instead #1889
+- Add `AblyLink` #1925
+
+## 1.4.1 (19 Sept 2018)
+
+- Add `connectionOptions` to ActionCableLink #1857
+
+## 1.4.0 (12 Apr 2018)
+
+- Add `PusherLink` for Apollo 2 Subscriptions on Pusher
+- Add `OperationStoreLink` for Apollo 2 persisted queries
+
+## 1.3.0 (30 Nov 2017)
+
+- Support HTTPS, basic auth, query string and port in `sync` #1053
+- Add Apollo 2 support for ActionCable subscriptions #1120
+- Add `--outfile-type=json` for stored operation manifest #1142
+
+## 1.2.0 (15 Nov 2017)
+
+- Support Apollo batching middleware #1092
+
+## 1.1.3 (11 Oct 2017)
+
+- Fix Apollo + ActionCable unsubscribe function #1019
+
+## 1.1.2 (9 Oct 2017)
+
+- Add channel IDs to ActionCable subscriptions #1004
+
+## 1.1.1 (21 Sept 2017)
+
+- Add `--add-typename` option to `sync` #967
+
+## 1.1.0 (18 Sept 2017)
+
+- Add subscription clients for Apollo and Relay Modern
+
+## 1.0.2 (22 Aug 2017)
+
+- Remove debug output
+
+## 1.0.1 (21 Aug 2017)
+
+- Rename from `graphql-pro-js` to `graphql-ruby-client`
+
+## 1.0.0 (31 Jul 2017)
+
+- Add `sync` task
